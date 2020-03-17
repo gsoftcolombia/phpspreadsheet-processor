@@ -1,0 +1,28 @@
+{
+    "name": "gsoftcolombia/phpspreadsheet-processor",
+    "type": "library",
+    "description": "Simple php-lib for Importing from or Exporting to MS Excel",
+    "homepage": "https://github.com/gsoftcolombia/phpspreadsheet-processor",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Diego Castro",
+            "email": "digic93@gmail.com"
+        }
+        ,{
+            "name": "Omar Ortiz",
+            "email": "omaredvega@gmail.com"
+        }
+        ,{
+            "name": "Oscar Villarraga",
+            "email": "dvillarraga@gmail.com"
+        }
+    ],
+    "require": {
+        "lexpress/doctrine1": "^1.3.6",
+        "phpoffice/phpspreadsheet": "^1.6.0"
+    },
+    "autoload": {
+        "files": ["src/DataTablesDoctrine1.class.php"]
+    }
+}
