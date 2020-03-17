@@ -23,6 +23,6 @@
         "phpoffice/phpspreadsheet": "^1.6.0"
     },
     "autoload": {
-        "files": ["src/DataTablesDoctrine1.class.php"]
+        "files": ["src/GsExcelProcessor.class.php"]
     }
 }
