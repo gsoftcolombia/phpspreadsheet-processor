@@ -226,7 +226,7 @@ Class GsExcelProcessor {
             $arraInside = array();
             foreach ($rows as $key=>$value) {
                 if(is_numeric($key))
-                    $arraInside[] = "'".utf8_encode(str_replace("'", "\'", str_replace(array("\r\n", "\r", "\n", "\0"), NULL, trim($value))))."'";
+                    $arraInside[] = "'". utf8_decode(utf8_encode(str_replace("'", "\'", str_replace(array("\r\n", "\r", "\n", "\0"), NULL, trim($value)))))."'";
             }
             $arraInside = implode(',', $arraInside);
             $sql.=$arraInside.");";
