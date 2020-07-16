@@ -160,10 +160,11 @@ Class GsExcelProcessor {
      * For Import: (Optional) Second Step
      * Method for validate your Excel File with custom rules
      * @param Array $rules 'required', 'number', array for in_array validation
+     * @param Boolean $strict true, false for in_array validation strict
      * @return String empty if validation pass, otherwise message
     */
 
-    public function validateRows($rules){
+    public function validateRows($rules, $strict = false){
         $rowsCol = $this->getDataFromFile();
         foreach ($rowsCol as $j=>$rows) {
             foreach ($rows as $key =>$value) {
@@ -177,7 +178,7 @@ Class GsExcelProcessor {
                             return "Column: ".$this->letters [$key]." Line: ".$rowsCol[$j]['idRow'] ." It is not a number";
                     }
                     if(is_array($rules[$key])){
-                        if (!in_array($value, $rules[$key]))
+                        if (!in_array($value, $rules[$key], $strict))
                             return "Column: ".$this->letters [$key]." Line: ".$rowsCol[$j]['idRow'] ." No se encontró en el sistema";
                     }
                 }
